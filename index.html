@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بهجة العيد | 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-animate">
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <main>
+        <section id="hero">
+            <div class="hero-card">
+                <div class="badge">🌙 عيد فطر مبارك</div>
+                <h1 class="main-title">أهلاً ببهجة العيد</h1>
+                <p class="subtitle">استعدوا للحظات لا تُنسى مع العائلة والأصدقاء</p>
+                
+                <div class="timer-container">
+                    <div class="time-block">
+                        <span id="seconds">00</span>
+                        <label>ثانية</label>
+                    </div>
+                    <div class="time-block">
+                        <span id="minutes">00</span>
+                        <label>دقيقة</label>
+                    </div>
+                    <div class="time-block">
+                        <span id="hours">00</span>
+                        <label>ساعة</label>
+                    </div>
+                    <div class="time-block">
+                        <span id="days">00</span>
+                        <label>يوم</label>
+                    </div>
+                </div>
+                <a href="#greeting" class="explore-btn">ابدأ التهنئة <i class="fas fa-chevron-down"></i></a>
+            </div>
+        </section>
+
+        <section id="greeting">
+            <div class="glass-container">
+                <h2 class="section-title">مصمم بطاقات العيد</h2>
+                <div class="generator-grid">
+                    <div class="controls">
+                        <input type="text" id="userName" placeholder="اكتب اسم من تحب هنـا..." maxlength="20">
+                        <button id="generateBtn" class="magic-btn">توليد البطاقة <i class="fas fa-wand-sparkles"></i></button>
+                        <button id="downloadBtn" class="download-btn" style="display:none">تحميل الصورة <i class="fas fa-download"></i></button>
+                    </div>
+                    <div class="preview">
+                        <canvas id="cardCanvas" width="500" height="500"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section id="planner" class="section-padding">
+    <div class="glass-container">
+        <h2 class="section-title">إنجازات يوم العيد 🚀</h2>
+        
+        <div class="progress-ring-wrapper" id="ring">
+            <div class="progress-inner-circle">
+                <span id="task-percent">0</span>%
+            </div>
+        </div>
+        
+        <div class="planner-list">
+            <div class="task-item">
+                <input type="checkbox" id="task1" class="task-check" onchange="updateProgress()">
+                <label for="task1">
+                    <i class="fas fa-mosque"></i>
+                    <span>أداء صلاة العيد في الساحة</span>
+                </label>
+            </div>
+            
+            <div class="task-item">
+                <input type="checkbox" id="task2" class="task-check" onchange="updateProgress()">
+                <label for="task2">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>إخراج زكاة الفطر المبارك</span>
+                </label>
+            </div>
+            
+            <div class="task-item">
+                <input type="checkbox" id="task3" class="task-check" onchange="updateProgress()">
+                <label for="task3">
+                    <i class="fas fa-users"></i>
+                    <span>زيارة الأقارب وصلة الرحم</span>
+                </label>
+            </div>
+            
+            <div class="task-item">
+                <input type="checkbox" id="task4" class="task-check" onchange="updateProgress()">
+                <label for="task4">
+                    <i class="fas fa-camera"></i>
+                    <span>توثيق ذكريات العيد بصور</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section id="quiz" class="section-padding">
+    <div class="glass-container">
+        <h2 class="section-title">تحدي معلومات العيد 🏆</h2>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+
+        <div id="quiz-msg" class="quiz-status-msg"></div>
+
+        <div id="quiz-wrapper">
+            <div class="question-box">
+                <h3 id="question-text">جاري تحميل السؤال...</h3>
+                <div class="options" id="options-container"></div>
+            </div>
+        </div>
+
+        <div id="quiz-result" style="display: none;">
+            <i class="fas fa-trophy" style="font-size: 3rem; color: var(--accent); margin-bottom: 15px;"></i>
+            <h3>كفو يا حريف! 🌟</h3>
+            <p>أنهيت التحدي بنجاح، عيدك مبارك!</p>
+            <button class="magic-btn" onclick="location.reload()" style="margin-top: 20px;">إعادة التحدي</button>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
