@@ -273,3 +273,15 @@ function showResult() {
 window.onload = () => {
     if(document.getElementById("question-text")) loadQuestion();
 };
+
+
+
+// وظيفة إخفاء شاشة التحميل عند اكتمال تحميل الصفحة
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    
+    // تأخير بسيط لمدة ثانية عشان المستخدم يلحق يشوف اللودر الشيك
+    setTimeout(() => {
+        loader.classList.add("loader-hidden");
+    }, 1000); 
+});

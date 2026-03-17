@@ -392,3 +392,64 @@ canvas {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+
+
+
+
+
+
+
+/* 11. شاشة التحميل (Loader) */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f0c29; /* نفس لون خلفية الموقع الأساسي */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* عشان يغطي كل السكاشن */
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid var(--accent); /* اللون الذهبي */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+#loader p {
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: 1px;
+    animation: pulseText 1.5s infinite alternate;
+}
+
+/* انيميشن الدوران */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* انيميشن نبض النص */
+@keyframes pulseText {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* كلاس الإخفاء */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
