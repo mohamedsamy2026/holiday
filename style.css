@@ -124,24 +124,34 @@ body {
     animation: bounce 2s infinite;
 }
 
-@media(max-width:500px){
-    #hero{
+@media (max-width: 500px) {
+    #hero {
         height: auto;
-        margin: 1rem 0;
+        padding: 40px 10px; /* استخدام padding أفضل من margin في السكاشن */
     }
 
-    canvas{
-        max-width: 80%;
+    /* الـ Canvas عشان يتوسطن لازم يكون block */
+    canvas {
+        display: block; 
+        max-width: 90%; /* كبر المساحة شوية للموبايل عشان يبان */
+        margin: 20px auto !important; 
     }
 
-    input[type="text"]{
-        max-width: 80%;
+    /* الإدخال والأزرار */
+    input[type="text"], 
+    .magic-btn, 
+    .download-btn {
+        display: block; /* ضروري جداً عشان الـ margin: auto يشتغل */
+        width: 90%;      /* استخدام width بدل max-width أفضل في الموبايل */
+        max-width: 300px; /* عشان ميكبرش بزيادة لو الموبايل عريض */
+        margin: 15px auto !important; 
+        float: none;    /* للتأكيد إنه مش واخد محاذاة جانبية */
     }
 
+    /* تنسيق إضافي لوسطنة الكلام داخل الأزرار */
     .magic-btn, .download-btn {
-        max-width: 80%;
+        text-align: center;
     }
-
 }
 
 @keyframes bounce {
@@ -338,7 +348,8 @@ canvas {
 }
 
 .question-box h3 {
-    margin-bottom: 25px;
+    margin: 25px 0;
+    margin-top: 55px;
     font-size: 1.4rem;
 }
 
@@ -364,8 +375,11 @@ canvas {
     transform: translateX(-5px);
 }
 
-.opt-btn.correct-flash { background: #27ae60 !important; }
-.opt-btn.wrong-flash { background: #e74c3c !important; }
+.opt-btn.correct-flash { 
+    background: #27ae60 !important;  
+}
+.opt-btn.wrong-flash { background: #e74c3c !important;
+ }
 
 #quiz-result {
     text-align: center;
